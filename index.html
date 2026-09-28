@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>F1 — Explore as peças</title>
+    <meta name="theme-color" content="#080808" />
+    <meta name="description" content="Explore um carro de Fórmula 1 em 3D, desmonte suas peças e conheça o regulamento técnico da FIA para 2026." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="F1 — Explore as peças" />
+    <meta property="og:description" content="Explore um carro de Fórmula 1 em 3D, desmonte suas peças e conheça o regulamento técnico da FIA para 2026." />
+    <meta property="og:image" content="/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Carro de Fórmula 1 de 2026 em um estúdio escuro. Explore as peças em português brasileiro." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="stage" role="region" aria-label="Carro de Fórmula 1 interativo em 3D" aria-describedby="controls-help"></div>
+    <p id="controls-help" class="sr-only">Arraste com o botão esquerdo para orbitar; use a roda do mouse para aproximar ou afastar. No toque, arraste para orbitar e use dois dedos para zoom. Toque ou clique em uma peça para fixar sua descrição. Use a lista de peças e as vistas de câmera pelo teclado. Escape fecha cartões e menus.</p>
+    <svg id="callout-svg" aria-hidden="true"></svg>
+    <div id="labels"></div>
+
+    <nav id="topbar" class="bar" aria-label="Montagem e peças">
+      <div class="group" id="presets"></div>
+      <div class="group">
+        <label class="explode" title="Separar as peças">
+          <input id="explode" type="range" min="0" max="1" step="0.001" value="0" aria-label="Explosão das peças" />
+          <output id="explode-val">0%</output>
+        </label>
+        <span class="sep"></span>
+        <button data-menu="layers-menu" aria-haspopup="true">Camadas</button>
+        <button data-menu="parts-menu" aria-haspopup="true">Peças</button>
+      </div>
+    </nav>
+
+    <ul id="key" aria-label="Categorias do regulamento"></ul>
+
+    <div class="menu" id="layers-menu" hidden><div class="chips" id="layers"></div></div>
+    <div class="menu menu-parts" id="parts-menu" hidden>
+      <input id="search" type="search" placeholder="Buscar peças…" aria-label="Buscar peças" autocomplete="off" />
+      <div id="part-list"></div>
+      <p id="search-empty" class="fine" role="status" hidden>Nenhuma peça encontrada.</p>
+      <div class="group-title">Quem projeta</div>
+      <ul class="legend" id="legend"></ul>
+      <details id="overview">
+        <summary>Números de 2026</summary>
+        <dl id="overview-list"></dl>
+      </details>
+      <p class="fine">Interpretação simplificada dos regulamentos Técnico e Esportivo de F1 da FIA para 2026, sem representar uma equipe. Valores ilustrativos.</p>
+    </div>
+
+    <nav id="bottombar" class="bar" aria-label="Câmera e visualização">
+      <div class="group" id="cams">
+        <button data-cam="hero" class="on">3/4</button>
+        <button data-cam="side">Lateral</button>
+        <button data-cam="top">Superior</button>
+        <button data-cam="front">Frente</button>
+        <button data-cam="rear">Traseira</button>
+        <button data-cam="under">Inferior</button>
+      </div>
+      <span class="sep"></span>
+      <div class="group">
+        <button id="view-mode" title="Colorir peças por categoria do regulamento"><span class="long">Cores das regras</span><span class="short">Cores</span></button>
+        <button id="aero-mode" title="Aerodinâmica ativa: alternar entre Curva e Reta" aria-label="Aerodinâmica ativa: modo Curva" aria-pressed="false">Aero: Curva</button>
+        <button id="xray">Raio X</button>
+        <button id="dims"><span class="long">Dimensões</span><span class="short">Medidas</span></button>
+        <button id="spin"><span class="long">Giro automático</span><span class="short">Giro</span></button>
+        <button id="compound" title="Trocar composto dos pneus"><i></i><span class="names"></span></button>
+        <button id="paint" title="Cor do carro"><i></i></button>
+      </div>
+    </nav>
+
+    <div id="card" class="card" role="dialog" aria-labelledby="part-title" aria-live="polite" hidden></div>
+
+    <div id="loading"><div class="spinner"></div><span>Montando o carro…</span></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+node_modules
+dist
+.claude
+.DS_Store
+.reference/
+artifacts/car-geometry.json
+artifacts/*.blend1
+artifacts/*.zip
