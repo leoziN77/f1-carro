@@ -1,0 +1,118 @@
+[
+  {
+    "name": "74 peças, 43 cartões e 8 camadas com vínculos válidos",
+    "ok": true
+  },
+  {
+    "name": "Documento, metadados e todos os cartões em pt-BR",
+    "ok": true
+  },
+  {
+    "name": "Explosão gradual em 50%, total em 100% e retorno exato",
+    "ok": true
+  },
+  {
+    "name": "Preset sem carroceria e restauração das camadas",
+    "ok": true
+  },
+  {
+    "name": "Camada: Carroceria",
+    "ok": true
+  },
+  {
+    "name": "Camada: Asas e assoalho",
+    "ok": true
+  },
+  {
+    "name": "Camada: Rodas e pneus",
+    "ok": true
+  },
+  {
+    "name": "Camada: Freios e suspensão",
+    "ok": true
+  },
+  {
+    "name": "Camada: Chassi e segurança",
+    "ok": true
+  },
+  {
+    "name": "Camada: Motor e transmissão",
+    "ok": true
+  },
+  {
+    "name": "Camada: Piloto e cockpit",
+    "ok": true
+  },
+  {
+    "name": "Camada: Eletrônica FIA",
+    "ok": true
+  },
+  {
+    "name": "Menus, pesquisa sem acentos e estado vazio",
+    "ok": true
+  },
+  {
+    "name": "Todos os 43 cartões: seleção, conteúdo, foco da câmera e fechamento",
+    "ok": true
+  },
+  {
+    "name": "Seleção reativa uma camada oculta",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: hero",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: side",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: top",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: front",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: rear",
+    "ok": true
+  },
+  {
+    "name": "Vista de câmera: under",
+    "ok": true
+  },
+  {
+    "name": "Cores por categoria e raio X restauram materiais",
+    "ok": true
+  },
+  {
+    "name": "Dimensões remontam o carro explodido e exibem medidas traduzidas",
+    "ok": true
+  },
+  {
+    "name": "Aerodinâmica ativa: todos os pivôs abrem e fecham",
+    "ok": true
+  },
+  {
+    "name": "Cinco compostos e cinco pinturas completam o ciclo",
+    "ok": true
+  },
+  {
+    "name": "Rotação automática move a câmera e pode ser desligada",
+    "ok": true
+  },
+  {
+    "name": "Roda do mouse aproxima e afasta dentro dos limites",
+    "ok": true
+  },
+  {
+    "name": "Gestos sintetizados: arrasto de mouse, toque e pinça",
+    "ok": true
+  },
+  {
+    "name": "Raycasting: destaque ao passar o cursor e seleção por clique/toque",
+    "ok": true
+  }
+]

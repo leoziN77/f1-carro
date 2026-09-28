@@ -1,0 +1,14 @@
+[
+  {
+    "quadro": "Celular em retrato",
+    "largura": 390,
+    "altura": 844,
+    "controlesForaDaTela": []
+  },
+  {
+    "quadro": "Celular em paisagem",
+    "largura": 844,
+    "altura": 390,
+    "controlesForaDaTela": []
+  }
+]

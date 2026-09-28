@@ -1,0 +1,15 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Validação responsiva — F1</title>
+<style>body{margin:20px;background:#191919;color:#eee;font:14px system-ui}main{display:flex;align-items:start;gap:24px;flex-wrap:wrap}iframe{border:1px solid #555;display:block}h1{font-size:20px}button{padding:10px}pre{white-space:pre-wrap}</style>
+<h1>Validação responsiva — aplicativo real em quadros de tamanhos fixos</h1>
+<p>Retrato: 390 × 844. Paisagem: 844 × 390. Os controles dentro dos quadros são interativos.</p>
+<button id="audit">Verificar limites dos controles</button><pre id="report" role="status"></pre>
+<main><section><h2>Celular — retrato</h2><iframe id="portrait" title="Celular em retrato" src="/" width="390" height="844"></iframe></section><section><h2>Celular — paisagem</h2><iframe id="landscape" title="Celular em paisagem" src="/" width="844" height="390"></iframe></section></main>
+<script>
+document.querySelector('#audit').onclick=()=>{
+ const rows=[...document.querySelectorAll('iframe')].map(frame=>{
+  const d=frame.contentDocument,w=frame.contentWindow.innerWidth,h=frame.contentWindow.innerHeight;
+  const clipped=[...d.querySelectorAll('.bar button,.bar input')].filter(el=>{const r=el.getBoundingClientRect();return r.left<0||r.top<0||r.right>w||r.bottom>h;}).map(el=>el.textContent||el.getAttribute('aria-label'));
+  return {quadro:frame.title,largura:w,altura:h,controlesForaDaTela:clipped};
+ });document.querySelector('#report').textContent=JSON.stringify(rows,null,2);
+};
+</script></html>
